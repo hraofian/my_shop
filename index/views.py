@@ -25,11 +25,18 @@ def main(request):
   return HttpResponse(template.render())
     
 
+  # print('request = ', request , 'context = ', context)
+
+
+
 def testing(request):
+  mymembers = Member.objects.all().values()
   template = loader.get_template('template.html')
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry'],   
+    'mymembers': mymembers,
   }
+  print('request = ', request , 'context = ', context)
+  
   return HttpResponse(template.render(context, request))
 
 # class IndexView(TemplateView):

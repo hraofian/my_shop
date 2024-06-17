@@ -2,8 +2,12 @@
 <html>
 <body>
 
-{% for x in fruits %}
-  <h1>{{ x }}</h1>
+
+{% for x in mymembers %}
+<p>{{ forloop.counter }} - {{ x.firstname }} {{ x.lastname }} , {{ x.phone }} -- {{ x.joined_date }}</p>
+
+<p>----------------------</p>
+
 {% endfor %}
 
 <p>In views.py you can see what the fruits variable looks like.</p>
