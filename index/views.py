@@ -1,4 +1,24 @@
-from django.views.generic import TemplateView
+from django.http import HttpResponse
+from django.template import loader
+from .models import Member
 
-class IndexView(TemplateView):
-    template_name = 'index/index.html'
+def members(request):
+  mymembers = Member.objects.all().values()
+  template = loader.get_template('index/all_members.html')
+  context = {
+    'mymembers': mymembers,
+  }
+  return HttpResponse(template.render(context, request))
+
+
+def details(request, id):
+  mymember = Member.objects.get(id=id)
+  template = loader.get_template('index/details.html')
+  context = {
+    'mymember': mymember,
+  }
+  return HttpResponse(template.render(context, request))
+
+
+# class IndexView(TemplateView):
+#     template_name = 'index/index.html'
