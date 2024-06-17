@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from .models import Member
+from django.views.generic import TemplateView
 
 def members(request):
   mymembers = Member.objects.all().values()
@@ -30,14 +31,13 @@ def main(request):
 
 
 def testing(request):
-  mymembers = Member.objects.all().values()
+  mydata = Member.objects.all().values()
   template = loader.get_template('template.html')
   context = {
-    'mymembers': mymembers,
+    'mymembers': mydata,
   }
-  print('request = ', request , 'context = ', context)
-  
   return HttpResponse(template.render(context, request))
 
-# class IndexView(TemplateView):
-#     template_name = 'index/index.html'
+
+class IndexView(TemplateView):
+    template_name = 'index/index.html'
