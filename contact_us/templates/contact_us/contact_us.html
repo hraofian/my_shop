@@ -1,0 +1,48 @@
+{% extends "shared/_layout.html" %}
+
+
+{% block content %}
+
+
+
+<!-- Single Page Header start -->
+{% include "contact_us/single_page_header.html" %}
+<!-- Single Page Header End -->
+
+
+
+
+
+<!-- Contact Start -->
+<div class="container-fluid contact py-5">
+    <div class="container py-5">
+        <div class="p-5 bg-light rounded">
+            <div class="row g-4">
+
+                
+                <!-- contact page top description start -->
+                {% include "contact_us/contact_page_top_description.html" %}
+                <!-- contact page top description  End -->
+                
+                
+                <!-- contact page top map start -->
+                {% include "contact_us/contact_page_top_map.html" %}
+                <!-- contact page top map  End -->
+
+                <!-- contact page form start -->
+                {% include "contact_us/contact_page_form.html" %}
+                <!-- contact page form  End -->
+
+
+                 <!-- contact page right info start -->
+                 {% include "contact_us/contact_page_right_info.html" %}
+                 <!-- contact page right info   End -->
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+{% endblock  %}
