@@ -1,10 +1,38 @@
+
+<h1>contact form by django test....................</h1>
+
+{% comment %} <form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form> {% endcomment %}
+
+<h1>contact form by django test.....................</h1>
+
+
+<p>----------------------------------------</p>
+
+
+
 <div class="col-lg-7">
     <form action="{%url 'contact-us'%}" class="" method='post'>
 
         <h1>contact form by django start</h1>
 
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_p }} 
+
+
+        {% comment %} {% for field in form %}
+        <div class="w-100 form-control border-0 py-3 mb-4">
+            {{ field.label_tag }} {{ field }}
+
+        </div>
+         {% endfor %} {% endcomment %}
+
+
+
+
 
 
         <h1>contact form by django end</h1>
@@ -12,6 +40,7 @@
 
 
         <p>----------------------------------------</p>
+
         <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name">
         <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email">
         <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message"></textarea>
