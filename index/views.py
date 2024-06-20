@@ -3,7 +3,7 @@ from django.template import loader
 from .models import Member
 from django.views.generic import TemplateView
 
-def members(request):
+def members(request): 
   mymembers = Member.objects.all().values()
   template = loader.get_template('index/all_members.html')
   context = {
