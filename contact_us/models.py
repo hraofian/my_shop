@@ -16,3 +16,6 @@ class contact_us(models.Model):
         verbose_name_plural = 'Contact Us Lists'
 
 
+# class ImageTest(models.Model):
+#     title = models.CharField(max_length=300)
+#     image = models.ImageField(upload_to='imagetest')
