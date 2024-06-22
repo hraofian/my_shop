@@ -40,6 +40,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Description')
     slug = models.SlugField(default="" , null=False, blank=True , unique=True , verbose_name='Title in url')
     is_active = models.BooleanField(default=False , verbose_name='Active / Unactive')
+    image = models.ImageField(upload_to='product_image', blank=True)
 
     def __str__(self):
         return self.title
