@@ -30,7 +30,7 @@ class ProductCategory(models.Model):
 
 
 
-
+ 
 
 class Product(models.Model):
     title = models.CharField(max_length=300 , verbose_name='Product Title')
@@ -41,6 +41,11 @@ class Product(models.Model):
     slug = models.SlugField(default="" , null=False, blank=True , unique=True , verbose_name='Title in url')
     is_active = models.BooleanField(default=False , verbose_name='Active / Unactive')
     image = models.ImageField(upload_to='product_image', blank=True)
+    weight = models.DecimalField(verbose_name='Weight', blank=True , null=True , decimal_places=3 , max_digits=10)
+    country_of_Origin = models.CharField(max_length=150 , verbose_name='Country of Origin', blank=True , null=True)
+    quality = models.CharField(max_length=100 , verbose_name='Quality', blank=True , null=True)
+    min_weight = models.DecimalField(verbose_name='Min Weight', blank=True , null=True, decimal_places=3, max_digits=10)
+
 
     def __str__(self):
         return self.title

@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from .models import *
+from django.views.generic.detail import DetailView
 
 
 
@@ -12,3 +13,9 @@ class ProductListView(ListView):
     model = Product
     template_name = 'shop/shop.html'
     context_object_name = 'product'
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'shop/shop_detail.html'
+    context_object_name = 'product_detail'
