@@ -207,16 +207,52 @@
 
                                 <div class="col-12">
                                     <div class="pagination d-flex justify-content-center mt-5">
-                                        <a href="#" class="rounded">&laquo;</a>
-                                        <a href="#" class="active rounded">1</a>
-                                        <a href="#" class="rounded">2</a>
-                                        <a href="#" class="rounded">3</a>
-                                        <a href="#" class="rounded">4</a>
-                                        <a href="#" class="rounded">5</a>
-                                        <a href="#" class="rounded">6</a>
-                                        <a href="#" class="rounded">&raquo;</a>
+                                        {% if page_obj.has_previous %}
+                                            <a href="?page=1" class="rounded"> &laquo; first</a>
+                                            <a href="?page={{page_obj.previous_page_number}}" class="rounded">previous</a>
+                                        {%endif%}
+                                        <a href="#" class="active rounded"> Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</a>
+                                        
+                                        {%if page_obj.paginator.num_pages > 1 %}
+                                            <a href="?page=2" class="{{class}}">2</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 2 %}
+                                            <a href="?page=3" class="rounded">3</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 3 %}
+                                        <a href="?page=4" class="rounded">4</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 4 %}
+                                        <a href="?page=5" class="rounded">5</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 5 %}
+                                        <a href="?page=6" class="rounded">6</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 6 %}
+                                        <a href="?page=7" class="rounded">7</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 7 %}
+                                        <a href="?page=8" class="rounded">8</a>
+                                        {%endif%}
+
+                                        {%if page_obj.paginator.num_pages > 8 %}
+                                        <a href="?page=9" class="rounded">9</a>
+                                        {%endif%}
+
+                                        {%if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}" class="rounded">next</a>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}" class="rounded">last &raquo;</a>
+                                        {%endif%}
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
